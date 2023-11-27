@@ -1,0 +1,113 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
+
+
+public class TelaPrincipal extends JFrame implements ActionListener  {
+	
+	JFrame frame = new JFrame();
+	
+	JLabel lGenero = new JLabel();
+	JLabel lFeminino = new JLabel();
+	JLabel lMasculino = new JLabel();
+	
+	
+	JLabel imagem = new JLabel();
+	
+	JPanel painel = new JPanel();
+	
+	
+	ButtonGroup genero = new ButtonGroup();
+	
+	JRadioButton feminino = new JRadioButton();
+	JRadioButton masculino = new JRadioButton();
+	
+	JComboBox opcao = new JComboBox<>();
+	
+	JButton bSalvar = new JButton();
+	
+	public void telaInicial() {
+		
+		frame.setSize(600, 300);
+
+		// VSCode = painel.setSize(width:450,height:230);
+		painel.setSize(600, 300);
+
+		// VSCode = painel.setLayout(mgr: null);
+		painel.setLayout(null);
+
+		// VSCode = lNome.setText(text: Nome: ");
+		lGenero.setText("Genero: ");
+		lFeminino.setText("Feminino ");
+		lMasculino.setText("Masculino ");
+
+		// VSCode = lNome.setBounds(x: 10, y: 50, width: 50, height: 20);
+		
+		
+		lGenero.setBounds(55, 80, 50, 20);
+		lFeminino.setBounds(120, 80, 80, 20);
+		lMasculino.setBounds(200, 80, 150, 20);
+		imagem.setBounds(400, 40, 150, 150);
+		imagem.setIcon(new ImageIcon("img2/OIP (2).jpg"));
+		
+		genero.add(masculino);
+		genero.add(feminino);
+		
+		
+		
+		feminino.setText("Feminino");
+		feminino.setBounds(100, 80, 20, 20);
+		
+		feminino.setText("Masculino");
+		masculino.setBounds(180, 80, 50, 20);
+		
+		
+		opcao.setBounds(200, 150, 100, 20);
+		opcao.addItem("Feminino");
+		opcao.addItem("Masculino");
+
+				
+		
+		
+		bSalvar.setText("Salvar");
+		bSalvar.setBounds(55, 150, 80, 55);
+		bSalvar.addActionListener(this);
+		
+		frame.setVisible(true);
+
+		frame.add(painel);
+		painel.add(lGenero);
+		painel.add(lMasculino);
+		painel.add(lFeminino);
+		painel.add(masculino);
+		painel.add(feminino);
+		painel.add(imagem);
+		
+		painel.add(opcao);
+		
+		painel.add(bSalvar);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
+		
+		
+	
+	
+
+	
